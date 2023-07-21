@@ -1,0 +1,15 @@
+{
+  "name": "b2b-clock_back",
+  "version": "0.1.0",
+  "private": false,
+  "homepage": ".",
+  "dependencies": {
+    "peer": "^1.0.0",
+    "express": "^4.18.2"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "devDependencies": {
+  }
+}

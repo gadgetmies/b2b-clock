@@ -1,49 +1,31 @@
 {
-  "name": "flow-recipe",
+  "name": "b2b-clock",
   "version": "0.1.0",
-  "private": false,
-  "homepage": ".",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gadgetmies/b2b-clock.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gadgetmies/b2b-clock/issues"
+  },
+  "homepage": "https://github.com/gadgetmies/b2b-clock#readme",
   "dependencies": {
-    "@testing-library/jest-dom": "^5.16.1",
-    "@testing-library/react": "^12.1.2",
-    "@testing-library/user-event": "^13.5.0",
-    "peerjs": "^1.4.7",
-    "qrcode.react": "^3.1.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-scripts": "5.0.0",
-    "uuid": "^9.0.0",
-    "web-vitals": "^2.1.2"
   },
   "scripts": {
-    "predeploy": "yarn run build",
-    "deploy": "gh-pages -d build",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start:back": "yarn workspace b2b-clock_back start",
+    "start:front": "yarn workspace b2b-clock_front start",
+    "start:prod-front": "yarn workspace b2b-clock_front start:prod",
+    "start": "concurrently \"yarn run start:back\" \"yarn run start:front\"",
+    "start:prod": "concurrently \"yarn run start:back\" \"yarn run start:prod-front\""
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
+  "workspaces": [
+    "packages/**"
+  ],
   "devDependencies": {
-    "gh-pages": "^3.1.0",
-    "prettier": "^2.5.1",
-    "raw-loader": "^4.0.2"
+    "concurrently": "^5.3.0",
+    "prettier": "^1.14.3"
   }
 }
