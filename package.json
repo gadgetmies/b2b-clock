@@ -20,6 +20,7 @@
     "start:prod-front": "yarn workspace b2b-clock_front start:prod",
     "start": "concurrently \"yarn run start:back\" \"yarn run start:front\"",
     "start:prod": "yarn build && yarn run start:back",
+    "deploy": "gh-pages -d packages/front/build",
     "build": "yarn workspace b2b-clock_front build"
   },
   "workspaces": [
@@ -27,6 +28,7 @@
   ],
   "devDependencies": {
     "concurrently": "^5.3.0",
-    "prettier": "^1.14.3"
+    "prettier": "^1.14.3",
+    "gh-pages": "^6.0.0"
   }
 }

@@ -444,7 +444,9 @@ function App() {
                   padding: 10,
                   width: '100%',
                   justifyContent: 'center',
-                  fontSize: '150%'
+                  fontSize: '150%',
+                  background: 'black',
+                  height: '3em'
                 }}>
                   <div style={{
                     display: 'flex',
@@ -475,7 +477,7 @@ function App() {
                 style={{paddingBottom: '1em', borderBottom: '1px solid black', padding: '1em', fontWeight: 'bold'}}>Up
                 next
               </div>
-              <div style={{overflowY: 'hidden', flexGrow: 1}}>
+              <div style={{overflowY: 'hidden', flexGrow: 1, marginBottom: '4em'}}>
                 <table style={{padding: '1em', width: '100%'}} className={"box"}>
                   <tbody>
                   {
