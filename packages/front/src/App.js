@@ -161,7 +161,7 @@ function App() {
     let newTimes = participantTimesRef.current.slice()
     const currentParticipantTime = getParticipantTimeById(participantId)
     currentParticipantTime.time = currentParticipantTime.time + timeElapsed
-    newTimes.sort((a, b) => a.time - b.time)
+    newTimes.sort((a, b) => a.participating === b.participating ? a.time - b.time : a.participating ? -1 : 1)
     setParticipantTimes(newTimes)
     startNextSwitch()
   }
@@ -477,7 +477,7 @@ function App() {
                 style={{paddingBottom: '1em', borderBottom: '1px solid black', padding: '1em', fontWeight: 'bold'}}>Up
                 next
               </div>
-              <div style={{overflowY: 'hidden', flexGrow: 1, marginBottom: '4em'}}>
+              <div style={{overflowY: 'hidden', flexGrow: 1, marginBottom: '8em'}}>
                 <table style={{padding: '1em', width: '100%'}} className={"box"}>
                   <tbody>
                   {
@@ -488,9 +488,10 @@ function App() {
                               time
                             }) =>
                         <tr>
-                          <td className={"next-up"}>{formatTime(time)}</td>
-                          <td style={{display: 'flex', alignItems: 'center'}}>{participant.name} {!participating &&
-                            <span className='pill' style={{position: 'absolute', right: 10}}>Skip</span>}</td>
+                          <td className={"next-up"}><span
+                            style={{opacity: !participating ? 0.5 : 1}}>{formatTime(time)}</span> {!participating &&
+                            <span className='pill'>Skip</span>}</td>
+                          <td style={{display: 'flex', alignItems: 'center'}}>{participant.name}</td>
                         </tr>
                       )
                   }
