@@ -1,6 +1,7 @@
 #root {
   overflow: hidden;
   color: white;
+  font-size: 120%;
 }
 
 .App {
@@ -82,4 +83,25 @@ th {
 
 .nav-item_current {
   background: #ffb6b6;
+}
+
+.pill {
+  border: 1px solid #f44;
+  background: #f443;
+  color: #f44;
+  padding: 2px;
+  font-size: 60%;
+  margin: 4px;
+}
+
+input {
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid white;
+  color: white;
+  font-size: 100%;
+}
+
+input:focus {
+  outline: none;
 }

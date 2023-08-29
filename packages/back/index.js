@@ -4,7 +4,6 @@ const {ExpressPeerServer} = require("peer");
 const https = require("https");
 const app = express();
 
-
 const key = fs.readFileSync("./key.pem");
 const cert = fs.readFileSync("./cert.pem");
 
@@ -19,7 +18,7 @@ const peerServer = ExpressPeerServer(server, {
   ssl: {
     key,
     cert,
-  },
+  }
 });
 
 app.use('/peer', peerServer)
